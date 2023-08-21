@@ -6,10 +6,15 @@ import * as S from './styles';
 
 import { Link } from 'react-router-dom';
 import Data from '../../data.json';
+import { DataType } from '../types';
 
-const Home: React.FC = () => {
+type HomeProps = {
+  setCountriesData: React.Dispatch<React.SetStateAction<DataType>>;
+};
+
+const Home: React.FC<HomeProps> = ({ setCountriesData }) => {
   const [theme, setTheme] = useState(dark);
-  const [countries, setCountries] = useState(Data);
+  const [countries] = useState(Data);
   const [searchValue, setSearchValue] = useState<string>('');
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
 
@@ -35,6 +40,10 @@ const Home: React.FC = () => {
       .includes(searchValue.toLowerCase());
     return matchesRegion && matchesSearch;
   });
+
+  const countriesDataHandle = (countriesData: any) => {
+    setCountriesData(countriesData);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -67,24 +76,12 @@ const Home: React.FC = () => {
               key={country.name}
               to={{
                 pathname: `/${country.name}`,
-                search: `?nativeName=${encodeURIComponent(country.nativeName)}
-                &name=${encodeURIComponent(country.name)}
-                &population=${encodeURIComponent(country.population)}
-                &region=${encodeURIComponent(country.region)}
-                &subregion=${encodeURIComponent(country.subregion)}
-                &flag=${encodeURIComponent(country.flags.svg)}
-                &capital=${encodeURIComponent(
-                  country.capital ?? '',
-                )}&topLevelDomain=${country.topLevelDomain.join(
-                  ',',
-                )}&currencies=${encodeURIComponent(
-                  JSON.stringify(country.currencies),
-                )}&languages=${encodeURIComponent(
-                  JSON.stringify(country.languages),
-                )}&borders=${country.borders?.join(',')}`,
               }}
             >
-              <S.CountryCard key={country.name}>
+              <S.CountryCard
+                key={country.name}
+                onClick={() => countriesDataHandle(country)}
+              >
                 <S.CardImg src={country.flags.svg} alt={country.name} />
 
                 <S.CardContainer>

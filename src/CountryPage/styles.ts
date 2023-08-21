@@ -60,38 +60,45 @@ export const Button = styled.button`
     font-size: 1.4rem;
     margin-right: 0.8rem;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const CountryCard = styled.div`
-  width: 300px;
-
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
-  border: none;
-  border-radius: 0.5rem;
-
-  background-color: ${(props) => props.theme.colors.elementColor};
-`;
-
-export const CardContainer = styled.div`
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 2rem;
+  padding: 3rem 10rem;
 `;
 
 export const CardImg = styled.img`
   width: 100%;
-  max-height: 300px;
-  border-radius: 0.5rem 0.5rem 0 0;
+  height: 100%;
+
+  max-width: 1000px;
+  max-height: 650px;
+
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+`;
+
+export const CardInfo = styled.div`
+  font-size: 1.4rem;
+
+  font-weight: 600;
+
+  color: ${(props) => props.theme.colors.textColor};
+
+  span {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
 `;
 
 export const CardTitle = styled.p`
-  font-size: 1.6rem;
+  font-size: 4rem;
   font-weight: 800;
 
   padding: 0.6rem 0;
@@ -99,17 +106,30 @@ export const CardTitle = styled.p`
   color: ${(props) => props.theme.colors.textColor};
 `;
 
-export const CardInfo = styled.p`
+export const CardText = styled.p`
   font-size: 1.4rem;
-
   font-weight: 600;
+
+  padding: 0.6rem 0;
 
   color: ${(props) => props.theme.colors.textColor};
 
-  opacity: 0.8;
+  button {
+    padding: 0.5rem;
 
-  span {
+    width: 50px;
+
+    margin-left: 1rem;
+
     font-size: 1.4rem;
-    font-weight: 300;
+    font-weight: 600;
+
+    background-color: ${(props) => props.theme.colors.elementColor};
+    color: ${(props) => props.theme.colors.textColor};
+
+    border: none;
+    border-radius: 0.5rem;
+
+    user-select: none;
   }
 `;

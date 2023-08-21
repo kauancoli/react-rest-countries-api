@@ -1,16 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Home from './Home/Home';
 import CountryPage from './CountryPage/CountryPage';
+import Home from './Home/Home';
+
+import { useState } from 'react';
+
+import Data from '../data.json';
+import { DataType } from './types';
 
 function App() {
+  const [countriesData, setCountriesData] = useState<DataType>(Data);
+
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:countryName" element={<CountryPage />} />
+        <Route
+          path="/"
+          element={<Home setCountriesData={setCountriesData} />}
+        />
+        <Route
+          path="/:countryName"
+          element={<CountryPage countriesData={countriesData} />}
+        />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
