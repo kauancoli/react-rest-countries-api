@@ -117,6 +117,13 @@ export const Input = styled.input`
     background-color: ${(props) => props.theme.colors.textColor};
     color: ${(props) => props.theme.colors.backgroundColor};
   }
+
+  @media (max-width: 1000px) {
+    width: 400px;
+  }
+  @media (max-width: 768px) {
+    width: 300px;
+  }
 `;
 
 export const CountryCard = styled.div`
