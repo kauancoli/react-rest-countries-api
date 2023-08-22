@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Check out the [Kauan-Project-React-Countries-Vercel](https://kauan-project-react-countries.vercel.app/)
+- Check out the [Kauan-Project-React-Countries-Vercel](https://kauan-react-countries-api.vercel.app/)
 
 
 ## My process
