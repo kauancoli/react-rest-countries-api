@@ -88,7 +88,8 @@ const Home: React.FC<HomeProps> = ({ setCountriesData }) => {
                   <S.CardTitle>{country.name}</S.CardTitle>
 
                   <S.CardInfo>
-                    Population: <span>{country.population}</span>
+                    Population:{' '}
+                    <span>{country.population.toLocaleString()}</span>
                   </S.CardInfo>
                   <S.CardInfo>
                     Region: <span>{country.region}</span>
