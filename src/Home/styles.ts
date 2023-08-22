@@ -127,11 +127,8 @@ export const Input = styled.input`
 `;
 
 export const CountryCard = styled.div`
-  width: 300px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 350px;
+  width: 315px;
 
   border: none;
   border-radius: 0.5rem;
@@ -142,22 +139,28 @@ export const CountryCard = styled.div`
 `;
 
 export const CardContainer = styled.div`
-  width: 100%;
-
   display: flex;
   flex-direction: column;
 
   padding: 2rem;
 `;
 
-export const CardImg = styled.img`
+export const CardImg = styled.div`
+  height: 50%;
   width: 100%;
-  max-height: 300px;
-  border-radius: 0.5rem 0.5rem 0 0;
+
+  img {
+    object-fit: cover;
+
+    height: 100%;
+    width: 100%;
+
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
 `;
 
 export const CardTitle = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
 
   padding: 0.6rem 0;
@@ -167,8 +170,9 @@ export const CardTitle = styled.p`
 
 export const CardInfo = styled.p`
   font-size: 1.4rem;
-
   font-weight: 600;
+
+  padding: 0.3rem 0;
 
   color: ${(props) => props.theme.colors.textColor};
 

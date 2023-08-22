@@ -82,7 +82,9 @@ const Home: React.FC<HomeProps> = ({ setCountriesData }) => {
                 key={country.name}
                 onClick={() => countriesDataHandle(country)}
               >
-                <S.CardImg src={country.flags.svg} alt={country.name} />
+                <S.CardImg>
+                  <img src={country.flag} alt={country.name} />
+                </S.CardImg>
 
                 <S.CardContainer>
                   <S.CardTitle>{country.name}</S.CardTitle>
