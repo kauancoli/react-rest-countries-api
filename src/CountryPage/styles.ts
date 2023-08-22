@@ -80,16 +80,18 @@ export const CardImg = styled.img`
 
   max-width: 1000px;
   max-height: 650px;
-
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 `;
 
 export const CardInfo = styled.div`
-  font-size: 1.4rem;
-
-  font-weight: 600;
-
   color: ${(props) => props.theme.colors.textColor};
+
+  max-width: 350px;
+
+  div {
+    font-size: 1.4rem;
+
+    font-weight: 600;
+  }
 
   span {
     font-size: 1.4rem;
@@ -120,6 +122,7 @@ export const CardText = styled.p`
     width: 50px;
 
     margin-left: 1rem;
+    margin-top: 1rem;
 
     font-size: 1.4rem;
     font-weight: 600;

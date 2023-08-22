@@ -26,7 +26,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countriesData }) => {
         </S.Header>
         <S.Top>
           <Link
-            key={countriesData.name}
+            key={countriesData?.name}
             to={{
               pathname: `/`,
             }}
@@ -37,7 +37,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countriesData }) => {
           </Link>
         </S.Top>
         <S.CountryCard>
-          <S.CardImg src={countriesData.flag} alt={countriesData.flag} />
+          <S.CardImg src={countriesData.flag} alt={countriesData?.flag} />
           <S.CardInfo>
             <S.CardTitle>{countriesData.name}</S.CardTitle>
             <S.CardText>
@@ -45,7 +45,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countriesData }) => {
             </S.CardText>
             <S.CardText>
               Population:{' '}
-              <span>{countriesData.population.toLocaleString()}</span>
+              <span>{countriesData.population.toLocaleString() ?? ''}</span>
             </S.CardText>
             <S.CardText>
               Region: <span>{countriesData.region}</span>
@@ -56,28 +56,36 @@ const CountryPage: React.FC<CountryPageProps> = ({ countriesData }) => {
             <S.CardText>
               Capital: <span>{countriesData.capital}</span>
             </S.CardText>
+
             <S.CardText>
-              Borders Countries:
-              {countriesData.borders.map((borders) => (
-                <button>{borders}</button>
-              ))}
+              <div>
+                Borders Countries:
+                {countriesData?.borders?.map((borders) => (
+                  <button style={{ maxInlineSize: '6rem' }}>
+                    {borders ?? ''}
+                  </button>
+                ))}
+              </div>
             </S.CardText>
           </S.CardInfo>
 
           <S.CardInfo>
             <S.CardText>
               Top Level Domain:
-              <span> {countriesData.topLevelDomain.map((t) => t)}</span>
+              <span> {countriesData?.topLevelDomain?.map((t) => t) ?? ''}</span>
             </S.CardText>
             <S.CardText>
               Currencies:
-              <span> {countriesData.currencies.map((c) => c.name)}</span>
+              <span>
+                {' '}
+                {countriesData?.currencies?.map((c) => c.name) ?? ''}
+              </span>
             </S.CardText>
             <S.CardText>
               Languages:
               <span>
                 {' '}
-                {countriesData.languages.map((l) => l.name).join(', ')}
+                {countriesData?.languages?.map((l) => l.name).join(', ') ?? ''}
               </span>
             </S.CardText>
           </S.CardInfo>
