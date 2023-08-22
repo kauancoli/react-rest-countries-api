@@ -4,39 +4,39 @@ export type DataType = {
   alpha2Code: string;
   alpha3Code: string;
   callingCodes: Array<string>;
-  capital: string;
-  altSpellings: Array<string>;
+  capital?: string;
+  altSpellings?: Array<string>;
   subregion: string;
   region: string;
   population: number;
-  latlng: Array<number>;
+  latlng?: Array<number>;
   demonym: string;
-  area: number;
+  area?: number;
   timezones: Array<string>;
-  borders: Array<string>;
+  borders?: Array<string>;
   nativeName: string;
   numericCode: string;
   flags: {
     svg: string;
     png: string;
   };
-  currencies: Array<{
+  currencies?: Array<{
     code: string;
     name: string;
     symbol: string;
   }>;
   languages: Array<{
-    iso639_1: string;
+    iso639_1?: string;
     iso639_2: string;
     name: string;
-    nativeName: string;
+    nativeName?: string;
   }>;
   translations: {
     br: string;
     pt: string;
     nl: string;
     hr: string;
-    fa: string;
+    fa?: string;
     de: string;
     es: string;
     fr: string;
@@ -45,10 +45,13 @@ export type DataType = {
     hu: string;
   };
   flag: string;
-  regionalBlocs: Array<{
+  regionalBlocs?: Array<{
     acronym: string;
     name: string;
+    otherNames?: Array<string>;
+    otherAcronyms?: Array<string>;
   }>;
-  cioc: string;
+  cioc?: string;
   independent: boolean;
+  gini?: number;
 };

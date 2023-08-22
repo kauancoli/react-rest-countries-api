@@ -5,11 +5,8 @@ import Home from './Home/Home';
 
 import { useState } from 'react';
 
-import Data from '../data.json';
-import { DataType } from './types';
-
 function App() {
-  const [countriesData, setCountriesData] = useState<DataType>(Data);
+  const [countriesData, setCountriesData] = useState();
 
   return (
     <BrowserRouter>

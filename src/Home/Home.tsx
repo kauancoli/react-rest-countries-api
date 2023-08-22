@@ -6,10 +6,9 @@ import * as S from './styles';
 
 import { Link } from 'react-router-dom';
 import Data from '../../data.json';
-import { DataType } from '../types';
 
 type HomeProps = {
-  setCountriesData: React.Dispatch<React.SetStateAction<DataType>>;
+  setCountriesData: React.Dispatch<React.SetStateAction<any>>;
 };
 
 const Home: React.FC<HomeProps> = ({ setCountriesData }) => {
