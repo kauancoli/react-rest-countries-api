@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CountryPage from './CountryPage/CountryPage';
 import Home from './Home/Home';
 
-function App() {
+function RouteApp() {
   const [countriesData, setCountriesData] = useState();
 
   return (
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default RouteApp;
