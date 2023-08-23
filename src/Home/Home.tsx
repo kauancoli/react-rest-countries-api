@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import Data from '../../data.json';
 import dark from '../Styles/dark';
 import light from '../Styles/light';
 import * as S from './styles';
-
-import { Link } from 'react-router-dom';
-import Data from '../../data.json';
 
 type HomeProps = {
   setCountriesData: React.Dispatch<React.SetStateAction<any>>;

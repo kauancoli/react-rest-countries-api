@@ -1,9 +1,7 @@
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import CountryPage from './CountryPage/CountryPage';
 import Home from './Home/Home';
-
-import { useState } from 'react';
 
 function App() {
   const [countriesData, setCountriesData] = useState();
