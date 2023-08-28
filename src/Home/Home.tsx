@@ -4,15 +4,16 @@ import { ThemeProvider } from 'styled-components';
 import Data from '../../data.json';
 import dark from '../Styles/dark';
 import light from '../Styles/light';
+import { DataType } from '../types';
 import * as S from './styles';
 
 type HomeProps = {
-  setCountriesData: React.Dispatch<React.SetStateAction<any>>;
+  setCountriesData: React.Dispatch<React.SetStateAction<DataType>>;
 };
 
 const Home: React.FC<HomeProps> = ({ setCountriesData }) => {
   const [theme, setTheme] = useState(dark);
-  const [countries] = useState(Data);
+  const [countries] = useState<DataType[]>(Data);
   const [searchValue, setSearchValue] = useState<string>('');
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
 

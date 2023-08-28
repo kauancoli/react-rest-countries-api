@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CountryPage from './CountryPage/CountryPage';
 import Home from './Home/Home';
+import { DataType, defaultDataType } from './types';
 
 function RouteApp() {
-  const [countriesData, setCountriesData] = useState();
+  const [countriesData, setCountriesData] = useState<DataType>(defaultDataType);
 
   return (
     <BrowserRouter>

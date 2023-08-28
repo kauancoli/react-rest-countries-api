@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import dark from '../Styles/dark';
 import light from '../Styles/light';
+import { DataType } from '../types';
 import * as S from './styles';
 
 type CountryPageProps = {
-  countriesData: any;
+  countriesData: DataType;
 };
 
 const CountryPage: React.FC<CountryPageProps> = ({ countriesData }) => {
@@ -57,15 +58,13 @@ const CountryPage: React.FC<CountryPageProps> = ({ countriesData }) => {
                 Capital: <span>{countriesData?.capital}</span>
               </S.CardText>
 
-              <S.CardText>
-                <>
-                  Borders Countries:
-                  {countriesData?.borders?.map((borders: any) => (
-                    <button style={{ maxInlineSize: '6rem' }}>
-                      {borders ?? ''}
-                    </button>
-                  ))}
-                </>
+              <S.CardText key={countriesData?.name}>
+                Borders Countries:
+                {countriesData?.borders?.map((borders) => (
+                  <button style={{ maxInlineSize: '6rem' }}>
+                    {borders ?? ''}
+                  </button>
+                ))}
               </S.CardText>
             </S.CardInfo>
 
@@ -74,23 +73,22 @@ const CountryPage: React.FC<CountryPageProps> = ({ countriesData }) => {
                 Top Level Domain:
                 <span>
                   {' '}
-                  {countriesData?.topLevelDomain?.map((t: any) => t) ?? ''}
+                  {countriesData?.topLevelDomain?.map((t) => t) ?? ''}
                 </span>
               </S.CardText>
               <S.CardText>
                 Currencies:
                 <span>
                   {' '}
-                  {countriesData?.currencies?.map((c: any) => c.name) ?? ''}
+                  {countriesData?.currencies?.map((c) => c.name) ?? ''}
                 </span>
               </S.CardText>
               <S.CardText>
                 Languages:
                 <span>
                   {' '}
-                  {countriesData?.languages
-                    ?.map((l: any) => l.name)
-                    .join(', ') ?? ''}
+                  {countriesData?.languages?.map((l) => l.name).join(', ') ??
+                    ''}
                 </span>
               </S.CardText>
             </S.CardInfo>

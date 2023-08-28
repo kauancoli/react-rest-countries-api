@@ -55,3 +55,55 @@ export type DataType = {
   independent: boolean;
   gini?: number;
 };
+
+export const defaultDataType: DataType = {
+  name: '',
+  topLevelDomain: [],
+  alpha2Code: '',
+  alpha3Code: '',
+  callingCodes: [],
+  subregion: '',
+  region: '',
+  population: 0,
+  demonym: '',
+  timezones: [],
+  nativeName: '',
+  numericCode: '',
+  flags: {
+    svg: '',
+    png: '',
+  },
+  languages: [
+    {
+      iso639_1: '',
+      iso639_2: '',
+      name: '',
+      nativeName: '',
+    },
+  ],
+  translations: {
+    br: '',
+    pt: '',
+    nl: '',
+    hr: '',
+    fa: '',
+    de: '',
+    es: '',
+    fr: '',
+    ja: '',
+    it: '',
+    hu: '',
+  },
+  flag: '',
+  regionalBlocs: [
+    {
+      acronym: '',
+      name: '',
+      otherNames: [],
+      otherAcronyms: [],
+    },
+  ],
+  cioc: '',
+  independent: false,
+  gini: 0,
+};
